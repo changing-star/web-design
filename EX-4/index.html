@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script>
+            async function getStats(){
+                let url = "https://api.github.com/users/Sliden101";
+                let xmlHttp = new XMLHttpRequest();
+                xmlHttp.open( "GET", url, true ); // false for synchronous request
+                xmlHttp.responseType = "json";
+                xmlHttp.onload = function(){
+                    console.log(xmlHttp.response);
+
+                    document.getElementById("pfp").src = xmlHttp.response.avatar_url;
+                    document.getElementById("view-profile").href = xmlHttp.response.html_url;
+
+                    document.getElementById("name").innerHTML = xmlHttp.response.name;
+
+                    document.getElementById("project-stat").innerHTML = xmlHttp.response.public_repos;
+                    document.getElementById("following-stat").innerHTML = xmlHttp.response.following;
+                    document.getElementById("follower-stat").innerHTML = xmlHttp.response.followers;
+
+                    document.getElementById("summary").innerHTML = xmlHttp.response.bio;
+
+                    return xmlHttp.response;
+                    
+                }
+                xmlHttp.send( null );
+
+
+                // document.getElementById("project").innerHTML = xmlHttp.response.
+            }
+        </script>
+    </head>
+    <body onload="getStats()">
+        <div class="card">
+            <div id="inner-card">
+
+                <image id="pfp" src="">
+
+                </image>
+                <h1 id="name"></h1>
+
+                <div class="stats">
+                    <div id="project">
+                        <h2>Projects</h2>
+                        <p id="project-stat"></p>
+                    </div>
+                    <div id="following">
+                        <h2>Following</h2>
+                        <p id="following-stat"></p>
+
+                    </div>
+                    <div id="followers">
+                        <h2>Followers</h2>
+                        <p id="follower-stat"></p>
+
+                    </div>
+                </div>
+
+                <p id="summary"></p>
+                <button id="view-profile-button"><a id="view-profile" href="">View Profile</a></button>
+            </div>
+
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,15 @@
+/* TODO */
+button{
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 30px;
+    color: white;
+    border-color: #da72b4;
+    background-color: #fa83cd;
+}
+
+button:hover{
+    border-color: #6e3659;
+    background-color: #ad578d;
+
+}

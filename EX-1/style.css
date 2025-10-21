@@ -1,0 +1,37 @@
+body {
+    background: grey;
+    font-family: sans-serif;
+}
+
+div {
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+p {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px;
+    color: white;
+    border-radius: 30px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+#button-1 {
+    background-color: teal;
+}
+#button-2 {
+    color: black;
+    background-color: orange;
+}
+#button-3 {
+    background-color: purple;
+}
