@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="form-container">
+        <div class="form-wrapper">
+            <h1>User Registration Form</h1>
+            <p class="form-subtitle">Please fill out all required fields below</p>
+
+            <form id="registrationForm">
+                <!-- Text Input -->
+                <div class="form-group">
+                    <label for="fullname">Full Name <span class="required">*</span></label>
+                    <input 
+                        type="text" 
+                        id="fullname" 
+                        name="fullname" 
+                        placeholder="Enter your full name" 
+                        required
+                    >
+                </div>
+
+                <!-- Email Input -->
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="example@email.com" 
+                        required
+                    >
+                </div>
+
+                <!-- Password Input -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Enter your password"
+                    >
+                </div>
+
+                <!-- Number Input -->
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input 
+                        type="number" 
+                        id="age" 
+                        name="age" 
+                        min="1" 
+                        max="150" 
+                        placeholder="Enter your age"
+                    >
+                </div>
+
+                <!-- Date Input -->
+                <div class="form-group">
+                    <label for="birthdate">Birthdate</label>
+                    <input 
+                        type="date" 
+                        id="birthdate" 
+                        name="birthdate"
+                    >
+                </div>
+
+                <!-- Radio Buttons -->
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input 
+                                type="radio" 
+                                id="male" 
+                                name="gender" 
+                                value="male"
+                            >
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="radio-option">
+                            <input 
+                                type="radio" 
+                                id="female" 
+                                name="gender" 
+                                value="female"
+                            >
+                            <label for="female">Female</label>
+                        </div>
+                        <div class="radio-option">
+                            <input 
+                                type="radio" 
+                                id="other" 
+                                name="gender" 
+                                value="other"
+                            >
+                            <label for="other">Other</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Select Dropdown -->
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="">-- Select a country --</option>
+                        <option value="usa">United States</option>
+                        <option value="canada">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="australia">Australia</option>
+                        <option value="germany">Germany</option>
+                        <option value="france">France</option>
+                        <option value="japan">Japan</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Checkboxes -->
+                <div class="form-group">
+                    <label>Preferences</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input 
+                                type="checkbox" 
+                                id="newsletter" 
+                                name="newsletter" 
+                                value="newsletter"
+                            >
+                            <label for="newsletter">Subscribe to our newsletter</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input 
+                                type="checkbox" 
+                                id="terms" 
+                                name="terms" 
+                                value="terms"
+                            >
+                            <label for="terms">I agree to the terms and conditions</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input 
+                                type="checkbox" 
+                                id="privacy" 
+                                name="privacy" 
+                                value="privacy"
+                            >
+                            <label for="privacy">I have read the privacy policy</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Textarea -->
+                <div class="form-group">
+                    <label for="message">Additional Comments</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        placeholder="Enter any additional information here..." 
+                        rows="4"
+                    ></textarea>
+                </div>
+
+                <!-- Range Slider -->
+                <div class="form-group">
+                    <label for="experience">Experience Level: <span id="experience-value" class="slider-value">5</span></label>
+                    <input 
+                        type="range" 
+                        id="experience" 
+                        name="experience" 
+                        min="1" 
+                        max="10" 
+                        value="5"
+                    >
+                    <p class="slider-info">1 (Beginner) to 10 (Expert)</p>
+                </div>
+
+                <!-- Submit and Reset Buttons -->
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+            </form>
+
+            <!-- Legend -->
+            <p class="form-legend"><span class="required">*</span> indicates required fields</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
