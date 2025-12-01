@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    background-color: gray;
+    justify-content: center;
+}
+
+.content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: clamp(300px,100%,800px);
+    background-color: rgb(129, 238, 79);
+}

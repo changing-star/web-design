@@ -1,0 +1,39 @@
+@media(min-width:0px) and (max-width: 792px){
+    .content{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .small{
+        padding: 1rem;
+        background-color: rgb(243, 104, 23);
+        color: #fff;
+        font-size: 0.5rem;
+    }
+
+    .big{
+        display: none;
+        color: #fff;
+    }
+}
+
+@media (min-width: 792px){
+    .content{
+        width: clamp(300px, 100%, 800px);
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .big{
+        padding: 2rem;
+        background-color: rgb(175, 235, 84);
+        font-size: 1.5rem;
+    }
+    .small{
+        display: none;
+    }
+}
