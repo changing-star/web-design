@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Bar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .drawer-enter {
+            animation: slideIn 0.3s ease-out;
+        }
+        .drawer-exit {
+            animation: slideOut 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <span class="text-xl font-bold text-gray-900">NAV-BAR</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition">About</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition">Projects</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900 transition">Contact</a>
+                </div>
+
+                <!-- Desktop Social Icons -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="#" class="text-blue-500 hover:text-blue-600 transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="#" class="text-blue-400 hover:text-blue-500 transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 002.856-3.51 10.02 10.02 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                    </a>
+                    <a href="#" class="text-red-500 hover:text-red-600 transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.175c-3.899-3.898-10.231-3.898-14.13 0-3.899 3.899-3.899 10.231 0 14.13 3.899 3.898 10.231 3.898 14.13 0 3.898-3.899 3.898-10.231 0-14.13zm-5.08 16.71a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm3.534-9.3l-5.01-5.009a1 1 0 0 0-1.414 0l-.707.707a1 1 0 0 0 0 1.414l5.01 5.009a1 1 0 0 0 1.414 0l.707-.707a1 1 0 0 0 0-1.414z"/></svg>
+                    </a>
+                    <a href="#" class="text-blue-600 hover:text-blue-700 transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 0H4C1.791 0 0 1.791 0 4v16c0 2.209 1.791 4 4 4h16c2.209 0 4-1.791 4-4V4c0-2.209-1.791-4-4-4zm-11 19H5v-11h4v11zm-2-12.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zM19 19h-4v-5.5c0-1.4-1.1-2.5-2.5-2.5S10 12.1 10 13.5V19H6V8h4v1.2C11 7.6 12.8 6 15 6c3.9 0 7 3.1 7 7v6z"/></svg>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-md text-gray-600 hover:bg-gray-100 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-drawer" class="hidden fixed inset-0 z-40 md:hidden">
+        <!-- Overlay -->
+        <div id="drawer-overlay" class="fixed inset-0 bg-black bg-opacity-50"></div>
+        
+        <!-- Drawer -->
+        <div id="drawer-content" class="fixed left-0 top-0 h-full w-64 bg-white shadow-lg">
+            <div class="p-4 border-b border-gray-200 flex justify-between items-center">
+                <span class="text-lg font-bold text-gray-900">NAV-BAR</span>
+                <button id="close-drawer-btn" class="text-gray-600 hover:bg-gray-100 rounded p-2 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="p-4 flex flex-col gap-4">
+                <a href="#" class="text-gray-700 hover:text-gray-900 font-medium transition py-2">Home</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900 font-medium transition py-2">About</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900 font-medium transition py-2">Projects</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900 font-medium transition py-2">Contact</a>
+            </div>
+
+            <div class="p-4 border-t border-gray-200">
+                <p class="text-sm text-gray-600 mb-4">Follow Us</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-blue-500 hover:text-blue-600 transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="#" class="text-blue-400 hover:text-blue-500 transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 002.856-3.51 10.02 10.02 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417a9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Responsive Navigation Bar</h1>
+            <p class="text-lg text-gray-600 mb-8">Try resizing your browser to see the responsive navigation in action</p>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 text-left">
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">Features:</h2>
+                <ul class="space-y-2 text-gray-700">
+                    <li>✓ Responsive design - horizontal menu on desktop, drawer on mobile</li>
+                    <li>✓ Smooth animations for drawer open/close</li>
+                    <li>✓ Social media icons on desktop</li>
+                    <li>✓ Mobile-friendly hamburger menu</li>
+                    <li>✓ Built with Tailwind CSS and vanilla JavaScript only</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const closeDrawerBtn = document.getElementById('close-drawer-btn');
+        const drawerContent = document.getElementById('drawer-content');
+        const drawerOverlay = document.getElementById('drawer-overlay');
+
+        // Open drawer
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileDrawer.classList.remove('hidden');
+            drawerContent.classList.add('drawer-enter');
+        });
+
+        // Close drawer
+        function closeDrawer() {
+            drawerContent.classList.remove('drawer-enter');
+            drawerContent.classList.add('drawer-exit');
+            setTimeout(() => {
+                mobileDrawer.classList.add('hidden');
+                drawerContent.classList.remove('drawer-exit');
+            }, 300);
+        }
+
+        closeDrawerBtn.addEventListener('click', closeDrawer);
+        drawerOverlay.addEventListener('click', closeDrawer);
+
+        // Close drawer when clicking on a link
+        document.querySelectorAll('#drawer-content a').forEach(link => {
+            link.addEventListener('click', closeDrawer);
+        });
+    </script>
+</body>
+</html>

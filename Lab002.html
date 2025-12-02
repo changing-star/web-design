@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 p-8">
+  <!-- Main Container -->
+  <div class="max-w-4xl mx-auto bg-white rounded-lg border-4 border-black p-8 shadow-lg">
+    
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-gray-800 mb-3">About</h1>
+      <p class="text-gray-500 text-sm max-w-md mx-auto">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, aperiam!
+      </p>
+    </div>
+
+    <!-- Image -->
+    <div class="mb-8 rounded-lg overflow-hidden">
+      <img 
+        src="https://w.wallhaven.cc/full/gj/wallhaven-gjxzk7.jpg" 
+        alt="Mountain landscape with winding path" 
+        class="w-full h-64 object-cover"
+      >
+    </div>
+
+    <!-- Tabs -->
+    <!-- Converted tabs to functional buttons that switch content -->
+    <div class="flex gap-4 mb-8 border-b-2 border-gray-200">
+      <button 
+        class="tab-btn px-6 py-3 font-semibold text-gray-700 bg-gray-200 rounded-t-lg hover:bg-gray-300 transition active-tab" 
+        data-tab="history"
+      >
+        History
+      </button>
+      <button 
+        class="tab-btn px-6 py-3 font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 transition" 
+        data-tab="vision"
+      >
+        Vision
+      </button>
+      <button 
+        class="tab-btn px-6 py-3 font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 transition" 
+        data-tab="goals"
+      >
+        Goals
+      </button>
+    </div>
+
+    <!-- Content Section -->
+    <!-- Content now changes based on tab selection -->
+    <div>
+      <!-- History Tab -->
+      <div id="history" class="tab-content">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">History</h2>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+          I'm baby wolf pickled schiltz try-hard normcore marfa man bun numbercore vice pop-up XOXO lomo kombucha glossier bicycle rights. Umami kinfolk salvia jean shorts offal venmo. Neutraguard tilde try-hard, wolf hue banjo man bun. Small batch lumeric mustache shoreditch craft beer bit shaman chartreuse tacos. Viral direct trade hoodie ugh chambray, craft beer pork belly flannel tacos single-origin coffee air-py migas plaid pop-up.
+        </p>
+      </div>
+
+      <!-- Vision Tab -->
+      <div id="vision" class="tab-content hidden">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">Vision</h2>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+          Man bun PBRB keytar copper mug prism, hell of helvetica. Synth crucifix offal deep v hella biodiesel. Church-key listicle polaroid put a bird on it chillwave palo santo enamel pin, tattooed oenings franzen la croix cray. Retro yr aesthetic four loko tbh helvetica air plant, neutra palo santo ennui mumblecore. Hoodie bushwick pour-over jean shorts chartreuse shabby chic. Roof party hammock master cleanse pop-up thriftaut, bicycle rights skateboard affogato readymade sustainable deep v live-edge schitz narwhal.
+        </p>
+        <div class="space-y-2">
+          <p class="text-gray-600 text-sm">list item</p>
+          <p class="text-gray-600 text-sm">list item</p>
+          <p class="text-gray-600 text-sm">list item</p>
+        </div>
+      </div>
+
+      <!-- Goals Tab -->
+      <div id="goals" class="tab-content hidden">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">Goals</h2>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+          Fanny pack DIY pour-over knausgård PBR&B retro gentrify raw denim heirloom synth. Taxidermy bitters DIY woke succulents gentrify listicle yr meditation. Craft beer pariatur blue bottle venmo narwhal cold-pressed glossier. Farm-to-table gentrify echo park cred typewriter taxidermy. Microdosing etsy tbh scenester normcore blog. Selvage jianbing whatever fanny pack hella.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+    .active-tab {
+      background-color: #e5e7eb;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <script>
+    // Tab switching functionality
+    document.querySelectorAll('.tab-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const tabName = button.getAttribute('data-tab');
+        
+        // Hide all tab content
+        document.querySelectorAll('.tab-content').forEach(content => {
+          content.classList.add('hidden');
+        });
+        
+        // Remove active state from all buttons
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+          btn.classList.remove('active-tab');
+          btn.classList.add('bg-gray-100');
+          btn.classList.remove('bg-gray-200');
+        });
+        
+        // Show selected tab and mark button as active
+        document.getElementById(tabName).classList.remove('hidden');
+        button.classList.add('active-tab');
+        button.classList.remove('bg-gray-100');
+        button.classList.add('bg-gray-200');
+      });
+    });
+  </script>
+</body>
+</html>
